@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Jenkins class 1 
 ## Topic Installation
 #devops/course/jenkins #evolvecyber/jenkins #devops/jenkins/class/1
