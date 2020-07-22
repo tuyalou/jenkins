@@ -1,11 +1,13 @@
 #!/bin/bash
-sudo apt -y update
-sudo apt -y install default-jdk
-wget -y -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
-sudo -y sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
-sudo apt -y update
-sudo apt -y install jenkins
-sudo systemctl enable --now jenkins -y
+sudo apt-get -y update
+sudo apt-get -y install default-jdk
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > \
+    /etc/apt/sources.list.d/jenkins.list'
+sudo apt-get update
+sudo apt search openjdk
+sudo apt-get install openjdk-8-jdk
+sudo systemctl enable --now jenkins
 
 
 
