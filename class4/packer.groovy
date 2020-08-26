@@ -53,7 +53,7 @@ def slavePodTemplate = """
     podTemplate(name: k8slabel, label: k8slabel, yaml: slavePodTemplate, showRawYaml: false) {
       node(k8slabel) {
         stage("Pull SCM") {
-            git 'https://github.com/fsadykov/evolvecyber-jenkins.git'
+            git 'https://github.com/tuyalou/jenkins.git'
         }-
         dir('class4/packer/') {
             container('packer') {
