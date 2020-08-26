@@ -57,7 +57,7 @@ def slavePodTemplate = """
         }-
         dir('class4/packer/') {
             container('packer') {
-                withCredentials([usernamePassword(credentialsId: 'packer-build-creds', passwordVariable: 'AWS_SECRET_KEY', usernameVariable: 'AWS_ACCESS_KEY')]) {
+                withCredentials([usernamePassword(credentialsId: 'aws-creds', passwordVariable: 'AWS_SECRET_KEY', usernameVariable: 'AWS_ACCESS_KEY')]) {
                     stage("Packer Validate") {
                         println('Validating the syntax.')
                         sh 'packer validate -syntax-only jenkins.json'
